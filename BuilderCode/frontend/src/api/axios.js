@@ -1,30 +1,20 @@
 import axios from "axios";
 
-
 const API = axios.create({
-
-  baseURL:"http://localhost:5000/api"
-
+  // 🔴 Is line ko badla hai taaki live par Vercel wala URL chale aur laptop par localhost
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api"
 });
-
 
 API.interceptors.request.use(
-(config)=>{
+  (config) => {
+    const token = localStorage.getItem("token");
 
-const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
 
-
-if(token){
-
-config.headers.Authorization =
-`Bearer ${token}`;
-
-}
-
-
-return config;
-
-});
-
+    return config;
+  }
+);
 
 export default API;
