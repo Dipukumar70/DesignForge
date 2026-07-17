@@ -1,7 +1,4 @@
 import {useState} from "react";
-
-import ComponentCard from "../components/ComponentCard";
-
 import "../styles/library.css";
 
 
@@ -165,14 +162,6 @@ Inputs
 
 filtered.map((item,index)=>(
 
-
-<ComponentCard
-
-key={index}
-
-component={item}
-
-/>
 
 
 ))
