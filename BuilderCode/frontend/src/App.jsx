@@ -3,10 +3,6 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-
-
-
-
 import Layout from "./Components/Layout";
 import ProjectManager from "./Components/ProjectManager";
 
@@ -22,10 +18,9 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import Editor from "./pages/Editor";
 
 
-import "./app.css";
+import "./App.css";
 import CardBuilder from "./Components/CardBuilder";
 import ComponentBuilder from "./Components/ComponentBuilder";
-// import ComponentCard from "./components/ComponentCard";
 import ComponentPanel from "./Components/ComponentPanel";
 import EditorCanvas from "./Components/EditorCanvas";
 import PropertyPanel from "./Components/PropertyPanel";
@@ -33,8 +28,6 @@ import TokenBuilder from "./Components/TokenBuilder";
 import ProjectDetail from "./pages/ProjectDetail";
 import InputBuilder from "./Components/InputBuilder";
 import ButtonBuilder from "./Components/ButtonBuilder";
-// import Export from "./pages/Export";
-// import DocCard from "./Components/DocCard";
 
 
 function App(){
