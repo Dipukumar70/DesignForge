@@ -9,10 +9,11 @@ const app = express();
 
 // 🔴 IS LINE KO UPDATE KIYA HAI (CORS Setup for Vercel)
 app.use(cors({
-  origin: "https://https://design-forge-xi.vercel.app/", // 👈 Yahaan apna actual Vercel link dalein
+  origin: "https://design-forge-xi.vercel.app", // 👈 Bilkul saaf aur sahi URL
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"]
 }));
+
 
 app.use(express.json());
 
