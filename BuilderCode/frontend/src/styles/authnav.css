@@ -1,0 +1,59 @@
+.auth-navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:100%;
+
+height:70px;
+padding:0 40px;
+/* color:white; */
+color: rgb(99, 102, 241);
+box-sizing:border-box;
+background-color:#f1f5f9 ;
+
+}
+
+.auth-logo{
+
+font-size:24px;
+
+font-weight:700;
+
+}
+
+
+
+.auth-nav-buttons button{
+
+padding:10px 22px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:15px;
+
+}
+
+
+
+.nav-signup{
+
+background:#4f46e5;
+
+color:white;
+
+}
+
+
+
+.nav-login{
+
+background:#10b981;
+
+color:white;
+
+}

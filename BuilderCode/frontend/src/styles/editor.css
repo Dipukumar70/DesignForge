@@ -1,0 +1,120 @@
+.editor{
+
+
+display:grid;
+
+grid-template-columns:
+
+250px 1fr 300px;
+
+height:calc(100vh - 70px);
+
+
+}
+
+
+
+.component-panel,
+.property-panel{
+
+
+background: var(--surface);
+
+border-radius:16px;
+
+padding:20px;
+
+box-shadow:
+
+0 8px 30px rgba(0,0,0,.05);
+
+
+
+}
+
+.property-panel label{
+
+display:block;
+
+font-size:14px;
+
+font-weight:600;
+color: var(--text);
+
+margin-top:15px;
+
+margin-bottom:6px;
+
+}
+.component-panel{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+/* change end */
+
+.canvas{
+padding:40px;
+color: var(--text);
+
+
+}
+
+
+
+.canvas-item{
+
+
+margin:20px;
+
+padding:20px;
+
+border:2px dashed #6366f1;
+
+
+
+}
+
+
+
+.canvas-item button{
+
+color: var(--text);
+padding:12px 30px;
+
+border:none;
+
+border-radius:8px;
+
+
+}
+
+
+
+.card-preview{
+
+
+padding:40px;
+border-radius:15px;
+
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.editor{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
