@@ -4,26 +4,22 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
 dotenv.config();
+
 const app = express();
 
-// CORS Setup for Vercel
+// Database connect (sirf ek baar)
+connectDB();
+
+// Middleware
 app.use(cors({
-  origin: "https://design-forge-six.vercel.app"
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: [
+    "http://localhost:5173",
+    "https://design-forge-six.vercel.app"
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
-
-// 🛠️ ASYNC MIDDLEWARE: Har request aane par check karega ki DB connected hai ya nahi
-app.use(async (req, res, next) => {
-  try {
-    await connectDB(); // Async function call
-    next();
-  } catch (err) {
-    res.status(500).json({ error: "Database connection failed" });
-  }
-});
 
 // Routes
 const projectRoutes = require("./routes/projectRoutes");
@@ -37,13 +33,13 @@ app.get("/", (req, res) => {
   res.json({ message: "DesignForge API Running" });
 });
 
-// 🚀 Local running ke liye condition (Vercel pe ye part skip ho jayega)
+// Local server only
 const PORT = process.env.PORT || 5000;
-if (process.env.NODE_ENV !== 'production') {
+
+if (process.env.NODE_ENV !== "production") {
   app.listen(PORT, () => {
-    console.log(`Server running locally on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
   });
 }
 
-// Vercel ke liye app export karna zaroori hai
 module.exports = app;
