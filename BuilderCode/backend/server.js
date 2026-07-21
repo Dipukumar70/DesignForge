@@ -8,7 +8,7 @@ const app = express();
 
 // CORS Setup for Vercel
 app.use(cors({
-  origin: "https://design-forge-xi.vercel.app",
+  origin: "https://design-forge-six.vercel.app"
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"]
 }));
